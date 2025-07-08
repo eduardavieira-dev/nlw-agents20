@@ -40,3 +40,35 @@ Tailwind CSS Intelisense
 npm i @biomejs/biome -D
 
 no site da ultracite vc pode ver o comando: npx ultracite init
+
+## Instalar docker previamente
+docker -v
+docker ps (ver o container rodando)
+para parar de rodar outros containers: docker stop <nome do container>
+
+pgvector-> busca por similaridade
+
+docker compose up -d (rodar o postgres)
+
+docker compose stop (parar de rodar)
+
+docker ps -a (ver todos os seus container)
+
+# Criar a conexão com bando de dados
+npm i postgres
+
+# atualizando o npm run dev
+npm i -D tsx
+npm install -D tsx
+npm uninstall ts-node(remover antigas dependencias)
+
+# Criar tabelas
+npm i drizzle-orm
+npm i drizzle-kit -D
+
+depois de configurar o defaultConfig
+npx drizzle-kit generate
+npx drizzle-kit migrate
+npx drizzle-kit studio(ver seu db)
+npx drizzle-seed -D(pre-poluação com dados fictitios)
+npm install drizzle-seed

@@ -1,4 +1,4 @@
- import 'dotenv/config'  // já carrega o .env automaticamente
+ import 'dotenv/config'  
  import { fastify } from 'fastify'
  import {
     serializerCompiler,
@@ -8,6 +8,7 @@
 
 import { fastifyCors } from '@fastify/cors'
 import { env } from './env.ts'
+import { getRoomRoute } from './http/routes/get-room.ts'
 
  const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -19,10 +20,11 @@ import { env } from './env.ts'
  app.setValidatorCompiler(validatorCompiler)
 
  app.get('/health', () => {
-    return 'Hello World'
+    return 'OK'
  })
 
+ app.register(getRoomRoute)
+
  app.listen({ port: Number(env.PORT) }).then(() => {
-    console.log(`Port: ${env.PORT}`)
-    console.log('Server is running on http://localhost:3333')
+   //  console.log('Server is running on http://localhost:3333')
  })

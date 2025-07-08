@@ -4,8 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --loader ts-node/esm src/server.ts",
-    "dev": "nodemon --watch src --ext ts --exec \"node --loader ts-node/esm src/server.ts\""
+    "start": "tsx src/server.ts",
+    "dev": "nodemon --watch src --ext ts --exec tsx src/server.ts",
+    "db:seed": "tsx src/db/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,14 +15,19 @@
   "devDependencies": {
     "@biomejs/biome": "2.0.6",
     "@types/node": "^24.0.10",
+    "drizzle-kit": "^0.31.4",
     "nodemon": "^3.1.10",
     "ts-node-dev": "^2.0.0",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "ultracite": "5.0.32"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.1",
     "dotenv": "^17.1.0",
-    "fastify-type-provider-zod": "^5.0.2"
+    "drizzle-orm": "^0.44.2",
+    "drizzle-seed": "^0.3.1",
+    "fastify-type-provider-zod": "^5.0.2",
+    "postgres": "^3.4.7"
   }
 }
