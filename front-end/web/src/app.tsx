@@ -1,19 +1,19 @@
-import { Button } from "./components/ui/button";
-import { Wand } from 'lucide-react'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CreateRoom } from "./pages/create-room";
+import { Room } from "./pages/room";
+
+const queryClient = new QueryClient()
 
 export function App() {
   return (
-    <div>
-      <Button>Hello world</Button>
-      <Button variant="destructive">Hello world</Button>
-      <Button variant="outline">Hello world</Button>
-      <Button variant="secondary">Hello world</Button>
-      <Button variant="ghost">Hello world</Button>
-      <Button variant="link">Hello world</Button>
-      <Button size="sm">Hello world</Button>
-      <Button size="lg">Hello world</Button>
-      <Button size="icon">
-        <Wand className="h-4 w-4" /></Button>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route element= {<CreateRoom />} index></Route>
+          <Route element= {<Room />} path="/room/:roomId"></Route>
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   )
 }

@@ -27,3 +27,8 @@ npx shadcn@latest init
 
 ### Instalar componentes estilizados
 npx shadcn@latest add button
+
+## Instalando demais bibliotecas
+npm i react-router-dom
+
+npm i @tanstack/react-query
