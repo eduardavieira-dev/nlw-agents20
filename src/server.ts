@@ -8,7 +8,10 @@
 
 import { fastifyCors } from '@fastify/cors'
 import { env } from './env.ts'
-import { getRoomRoute } from './http/routes/get-room.ts'
+import { getRoomRoute } from './http/routes/get-rooms.ts'
+import { createRoomRoute } from './http/routes/create-room.ts'
+import { getRoomQuestions } from './http/routes/get-room-questions.ts'
+import { createQuestionRoute } from './http/routes/create-question.ts'
 
  const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -24,7 +27,8 @@ import { getRoomRoute } from './http/routes/get-room.ts'
  })
 
  app.register(getRoomRoute)
+ app.register(createRoomRoute)
+ app.register(getRoomQuestions);
+ app.register(createQuestionRoute);
 
- app.listen({ port: Number(env.PORT) }).then(() => {
-   //  console.log('Server is running on http://localhost:3333')
- })
+ app.listen({ port: Number(env.PORT) })
