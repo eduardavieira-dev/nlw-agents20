@@ -24,3 +24,6 @@ npm install -D @types/node
 
 alterar tbm o vite.config
 npx shadcn@latest init
+
+### Instalar componentes estilizados
+npx shadcn@latest add button
