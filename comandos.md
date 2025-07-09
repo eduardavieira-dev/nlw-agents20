@@ -1,74 +1,170 @@
-## Comando utilizados no terminal do projeto
+## 🧰 Comandos Úteis no Terminal
 
-Iniciar o node:
+Esta seção reúne os principais comandos utilizados durante o desenvolvimento do projeto **NLW Agents**. Serve como um guia prático, especialmente útil para quem está começando.
+
+---
+
+### 📦 Inicialização do Projeto
+
+```bash
+# Cria o projeto Node.js com um package.json padrão
 npm init -y
+```
 
-Criar dependencias de desenvolvimento
-npm i typescript @types/node -D
+---
 
-npx tsc --init
+### 📚 Instalação de Dependências
 
-- Achar minha versao do node: https://github.com/tsconfig/bases?tab=readme-ov-file
- 
+#### 🔧 Dependências de Desenvolvimento
 
- Adicinando bibliotecas: 
-npm i fastify @fastify/cors @fastify/type-provider-zod zod
-ou
-npm i fastify @fastify/cors zod
+```bash
+# TypeScript e tipagens do Node.js
+npm install typescript @types/node -D
+
+# Executar código TypeScript em tempo real (com reinicialização automática)
+npm install ts-node-dev -D
+
+# Alternativa moderna ao ts-node-dev (mais leve e rápida)
+npm install tsx -D
+
+# Nodemon para reiniciar o servidor ao salvar alterações (opcional)
+npm install nodemon -D
+```
+
+#### 🛠️ Dependências da Aplicação
+
+```bash
+# Fastify (framework HTTP), CORS e validação com Zod
+npm install fastify @fastify/cors zod
+
+# Integração de Fastify com Zod
 npm install fastify-type-provider-zod
+```
 
+#### 🌿 Variáveis de Ambiente
 
-npm install --save-dev ts-node typescript
-npm install -D ts-node
-npm run dev
-npm install -D ts-node-dev
-npm install --save-dev ts-node-dev
-npm install -D ts-node-dev
-npx ts-node-dev --respawn --transpile-only --esm ./src/server.ts
-npm install -D nodemon
+```bash
+# Leitura do arquivo .env
+npm install dotenv
+```
 
-Para usar o env: npm install dotenv
+#### 🗃️ Banco de Dados e ORM
 
-Baixar extensoes do VS code: 
+```bash
+# Cliente PostgreSQL
+npm install postgres
 
-Biome
+# ORM Drizzle e CLI para migrações
+npm install drizzle-orm
+npm install drizzle-kit -D
 
-Rest Client
-
-Tailwind CSS Intelisense
-
-npm i @biomejs/biome -D
-
-no site da ultracite vc pode ver o comando: npx ultracite init
-
-## Instalar docker previamente
-docker -v
-docker ps (ver o container rodando)
-para parar de rodar outros containers: docker stop <nome do container>
-
-pgvector-> busca por similaridade
-
-docker compose up -d (rodar o postgres)
-
-docker compose stop (parar de rodar)
-
-docker ps -a (ver todos os seus container)
-
-# Criar a conexão com bando de dados
-npm i postgres
-
-# atualizando o npm run dev
-npm i -D tsx
-npm install -D tsx
-npm uninstall ts-node(remover antigas dependencias)
-
-# Criar tabelas
-npm i drizzle-orm
-npm i drizzle-kit -D
-
-depois de configurar o defaultConfig
-npx drizzle-kit generate
-npx drizzle-kit migrate
-npx drizzle-kit studio(ver seu db)
-npx drizzle-seed -D(pre-poluação com dados fictitios)
+# Gerador de dados fictícios
 npm install drizzle-seed
+```
+
+---
+
+### ⚙️ Configuração do TypeScript
+
+```bash
+# Gera o arquivo tsconfig.json
+npx tsc --init
+```
+
+📌 Para uma configuração mais robusta e adaptada à sua versão do Node.js, consulte:
+🔗 [tsconfig/bases (GitHub)](https://github.com/tsconfig/bases?tab=readme-ov-file)
+
+---
+
+### 🚀 Execução do Projeto
+
+```bash
+# Usando ts-node-dev (modo dev com recarregamento)
+npx ts-node-dev --respawn --transpile-only --esm ./src/server.ts
+
+# Usando tsx (recomendado)
+npm run dev
+```
+
+💡 Certifique-se de ter este script no seu `package.json`:
+
+```json
+"scripts": {
+  "dev": "tsx src/server.ts"
+}
+```
+
+---
+
+### 🐳 Docker e Banco de Dados
+
+```bash
+# Verificar versão do Docker
+docker -v
+
+# Subir os containers em segundo plano
+docker compose up -d
+
+# Parar os containers
+docker compose stop
+
+# Listar containers em execução
+docker ps
+
+# Listar todos os containers (inclusive parados)
+docker ps -a
+
+# Parar um container específico
+docker stop <nome-do-container>
+```
+
+---
+
+### 🛠️ Migrações com Drizzle ORM
+
+```bash
+# Gerar os arquivos de migração com base no schema definido
+npx drizzle-kit generate
+
+# Aplicar as migrações ao banco de dados
+npx drizzle-kit migrate
+
+# Visualizar as tabelas e registros com interface web
+npx drizzle-kit studio
+```
+
+---
+
+### 🌱 Popular o Banco com Dados Fictícios
+
+```bash
+# Rodar o seed configurado no projeto
+npm run db:seed
+```
+
+💡 Certifique-se de que o script abaixo esteja no seu `package.json`:
+
+```json
+"scripts": {
+  "db:seed": "tsx src/db/seed.ts"
+}
+```
+
+---
+
+### 🧩 Extensões Recomendadas para o VS Code
+
+- **Biome** – Formatador e linter de código moderno
+- **Rest Client** – Teste de requisições HTTP direto no editor
+- **Tailwind CSS IntelliSense** – Sugestões automáticas ao usar Tailwind CSS
+
+```bash
+# Instalar Biome no projeto
+npm install @biomejs/biome -D
+```
+
+---
+
+### 📄 Prompt Utilizado para Geração do README
+
+> _Escreva um README.md simples para esse projeto contendo informações técnicas de bibliotecas utilizadas, padrões de projeto e instruções de setup e configuração do projeto conforme as bibliotecas utilizadas. Mantenha o README simples, contendo apenas as informações mais importantes. Lembre-se de mencionar que o nome do projeto é NLW Agents e que ele foi desenvolvido durante um evento da Rocketseat em 2025. Se possível, gostaria do conteúdo bastante didático para que até um iniciante consiga entender facilmente. Quero a documentação completa!_

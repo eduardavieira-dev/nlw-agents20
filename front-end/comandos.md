@@ -1,34 +1,112 @@
-## Para criar o projeto
+## 🌐 Setup do Projeto Front-End com Vite + React + Tailwind
+
+Essa seção guia você na criação e configuração de um projeto front-end moderno utilizando Vite, React, TypeScript e Tailwind CSS, incluindo instalação de bibliotecas, ferramentas e componentes estilizados.
+
+---
+
+### 🚧 Criar o Projeto com Vite
+
+```bash
 npm create vite@latest web
--> react -> Typescript
-npm i
+```
 
-npm i @biomejs/biome -D
+Durante o processo, selecione:
 
+- **Framework:** `React`
+- **Variant:** `TypeScript`
+
+Em seguida, instale as dependências:
+
+```bash
+cd web
+npm install
+```
+
+---
+
+### 🧹 Biome (Lint e Formatador de Código)
+
+```bash
+npm install @biomejs/biome -D
+```
+
+> O Biome ajuda a manter o código padronizado e limpo.
+> Também é possível instalar a extensão oficial do Biome no VS Code.
+
+---
+
+### 🔥 Inicialização com Ultracite (opcional)
+
+Ferramenta para scaffolding (estrutura inicial) de projetos modernos.
+
+```bash
 npx ultracite init
+```
 
-## instalar tailwind
-npm install tailwindcss @tailwindcss/vite
-ou se precisar e tentar de novo o comando acima depois
-rm -rf node_modules package-lock.json(tive q apagar instalções quebradas)
+---
 
+## 🎨 Instalar e Configurar Tailwind CSS
 
+```bash
 npm install -D tailwindcss postcss autoprefixer
-
 npx tailwindcss init
+```
 
-### Instalar componentes prontos
-https://ui.shadcn.com/
-no seu tsconfig.json add no compilerOptions o que é indicado na doc
+Se estiver usando com Vite:
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+> ⚠️ Caso enfrente problemas com pacotes quebrados, você pode tentar:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+---
+
+## 💅 Componentes Prontos com shadcn/ui
+
+### 1. Acessar o site de componentes:
+
+📎 [https://ui.shadcn.com/](https://ui.shadcn.com/)
+
+### 2. Instalar tipagens necessárias
+
+```bash
 npm install -D @types/node
+```
 
-alterar tbm o vite.config
+### 3. Configurar `tsconfig.json`
+
+Adicione as opções recomendadas no `compilerOptions`, conforme indicado na [documentação oficial](https://ui.shadcn.com/docs/installation).
+
+### 4. Ajustar o `vite.config.ts` conforme necessário (a documentação também orienta).
+
+### 5. Inicializar o shadcn/ui
+
+```bash
 npx shadcn@latest init
+```
 
-### Instalar componentes estilizados
+### 6. Adicionar componentes prontos
+
+```bash
 npx shadcn@latest add button
+```
 
-## Instalando demais bibliotecas
-npm i react-router-dom
+> Substitua `button` por outros componentes que quiser instalar (como `card`, `dialog`, etc).
 
-npm i @tanstack/react-query
+---
+
+## 🧩 Outras Bibliotecas Úteis
+
+```bash
+# Navegação entre páginas
+npm install react-router-dom
+
+# Gerenciamento de dados assíncronos (fetch, cache, etc.)
+npm install @tanstack/react-query
+```
