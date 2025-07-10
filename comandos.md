@@ -168,3 +168,12 @@ npm install @biomejs/biome -D
 ### 📄 Prompt Utilizado para Geração do README
 
 > _Escreva um README.md simples para esse projeto contendo informações técnicas de bibliotecas utilizadas, padrões de projeto e instruções de setup e configuração do projeto conforme as bibliotecas utilizadas. Mantenha o README simples, contendo apenas as informações mais importantes. Lembre-se de mencionar que o nome do projeto é NLW Agents e que ele foi desenvolvido durante um evento da Rocketseat em 2025. Se possível, gostaria do conteúdo bastante didático para que até um iniciante consiga entender facilmente. Quero a documentação completa!_
+
+
+#### Caso sua porta 3333 já esteja sendo usada você pode usar os seguintes comandos
+
+lsof -i :3333
+
+em seguida para parar de rodar o que estiver naquela porta execute o comando desta maneira com o PID no lugar indicado
+
+kill -9 {numero do PID}

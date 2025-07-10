@@ -99,6 +99,11 @@ npx shadcn@latest add button
 
 > Substitua `button` por outros componentes que quiser instalar (como `card`, `dialog`, etc).
 
+
+```bash
+npm install lucide-react
+```
+> Instalar os icones
 ---
 
 ## 🧩 Outras Bibliotecas Úteis
@@ -109,4 +114,11 @@ npm install react-router-dom
 
 # Gerenciamento de dados assíncronos (fetch, cache, etc.)
 npm install @tanstack/react-query
+
+# Formatar Data
+npm install dayjs
 ```
+### Comandos finais usados no desenvolvimento
+npm i zod
+
+npm i @hookform/resolvers
