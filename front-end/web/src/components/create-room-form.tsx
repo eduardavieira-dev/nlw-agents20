@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { useCreateRoom } from "../http/use-create-rooms";
+
 const createRoomSchema = z.object({
     name: z.string().min(3, { message: "Inclua ao menos 3 caracteres"}),
     description: z.string(),

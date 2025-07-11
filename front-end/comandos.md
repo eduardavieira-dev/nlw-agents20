@@ -122,3 +122,7 @@ npm install dayjs
 npm i zod
 
 npm i @hookform/resolvers
+
+### Desenvolvimnt do audio
+
+npm i @types/dom-speech-recognition -D
